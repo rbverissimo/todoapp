@@ -48,7 +48,8 @@ function showTasks() {
     newLiTag +=
       "<li>" +
       element +
-      '<span onclick="deleteTask()"; ><i class="fas fa-trash"></i></span></li>';
+      '<span onclick="deleteTask()"; style="display:inline-flex; align-items:center;justify-content:center;height:100%">'
+       +'<i class="material-symbols-outlined">delete</i></span></li>';
   });
   todoList.innerHTML = newLiTag;
   inputBox.value = ""; //once a task is shown the input box is cleared;

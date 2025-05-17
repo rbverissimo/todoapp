@@ -47,9 +47,10 @@ function showTasks() {
   listArr.forEach((element, index) => {
     newLiTag +=
       "<li>" +
-      element +
-      '<span onclick="deleteTask()"; style="display:inline-flex; align-items:center;justify-content:center;height:100%">'
-       +'<i class="material-symbols-outlined">delete</i></span></li>';
+      `<span class="task-span" onclick="selecionarTask('${element}')">` + element + '</span>'
+      + '<span class="delete-span" onclick="deleteTask()"; style="display:inline-flex; align-items:center;justify-content:center;height:100%">'
+       +'<i class="material-symbols-outlined">delete</i></span>'
+       +'</li>';
   });
   todoList.innerHTML = newLiTag;
   inputBox.value = ""; //once a task is shown the input box is cleared;
@@ -62,6 +63,10 @@ function deleteTask(index) {
   listArr.splice(index, 1); //takes the index and how many after the index will be deleted;
   localStorage.setItem("New Todo", JSON.stringify(listArr)); //back to string
   showTasks();
+}
+
+function selecionarTask(element){
+  console.log(element);
 }
 
 //delete all function

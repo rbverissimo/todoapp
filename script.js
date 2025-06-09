@@ -48,7 +48,7 @@ function showTasks() {
     newLiTag +=
       "<li>" +
       `<span class="task-span" onclick="selecionarTask('${element}')">` + element + '</span>'
-      + '<span class="delete-span" onclick="deleteTask()"; style="display:inline-flex; align-items:center;justify-content:center;height:100%">'
+      + `<span class="delete-span" onclick="deleteTask('${index}')"; style="display:inline-flex; align-items:center;justify-content:center;height:100%">`
        +'<i class="material-symbols-outlined">delete</i></span>'
        +'</li>';
   });

@@ -9,11 +9,20 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   </head>
   <body>
+    <nav class="nav-top">
+      <div>ToDoApp</div>
+      <div id="langWrapperEl" class="langWrapper">
+        <i class="material-symbols-outlined">language</i>
+          <span id="selectedLang">Português</span>
+          <ul class="langList" id="langSelector">
+          </ul>
+      </div>
+    </nav>
     <div class="main-container">
       <div class="wrapper">
         <header>Tarefas</header>
         <div class="inputField">
-          <input type="text" placeholder="Add your new task" />
+          <input type="text" placeholder="Adicionar nova tarefa" />
           <button style="cursor: pointer; display: flex; align-items: center; justify-content: center;">
             <i class="material-symbols-outlined">add</i>
           </button>
@@ -27,6 +36,9 @@
         </div>
       </div>
     </div>
+    <footer class="footer-wrapper">
+      <p>&copy; <span id="ano-ft"></span>  desgined by Coltran Soluções</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

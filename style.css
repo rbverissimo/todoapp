@@ -11,11 +11,34 @@ body {
   background: linear-gradient(to left, #68eacc 0%, #497be8 100%);
 }
 
+nav.nav-top {
+  display: flex; 
+  width: 100%; 
+  height: 7vh; 
+  background-color: #f1f1f1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+}
+
+.langWrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-column: 2;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+ul.langList {
+  list-style-type: none;
+}
+
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 93vh;
 }
 
 .wrapper {
@@ -133,4 +156,16 @@ body {
 .footer button.active {
   opacity: 1;
   pointer-events: auto;
+}
+
+footer.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: #333;
+  padding: 2%;
+  color: #f4f4f4 !important;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

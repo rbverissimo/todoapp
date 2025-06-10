@@ -3,6 +3,8 @@ const addBtn = document.querySelector(".inputField button");
 const todoList = document.querySelector(".todoList");
 const deleteAllbtn = document.querySelector(".footer button");
 
+document.getElementById('ano-ft').innerText = new Date().getFullYear();
+
 inputBox.onkeyup = () => {
   //after releasing the key
   let userData = inputBox.value; //the inputBox const points to the input area in the DOM;

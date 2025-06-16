@@ -82,3 +82,27 @@ deleteAllbtn.onclick = () => {
   localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTasks();
 };
+
+document.getElementById('langEnSelect').onclick = renderEnglish;
+
+function renderEnglish(){
+  document.getElementById('selectedLang').textContent = 'English';
+
+  const langSelector = document.getElementById('langSelector');
+  langSelector.children.item(0).textContent = 'Portuguese';
+  langSelector.children.item(1).textContent = 'English';
+
+  const inputField = document.getElementsByClassName('inputField').item(0).children.item(0);
+  inputField.placeholder = 'Add new task';
+
+  const header = document.getElementsByClassName('wrapper').item(0).children.item(0);
+  header.textContent = 'ToDo';
+
+  const wrapperFooter = document.querySelector('.footer');
+
+  wrapperFooter.innerHTML = 
+    `<span>You got <span class="pendingNumb"></span> pending tasks</span>` 
+    +`<button>Clear all</button>`;
+
+  showTasks();
+}

@@ -77,11 +77,14 @@ function selecionarTask(element){
   console.log(element);
 }
 
-deleteAllbtn.onclick = () => {
+deleteAllbtn.onclick = clearTasks;
+
+function clearAllTasks(){
   listArr = []; 
   localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTasks();
 };
+
 
 document.getElementById('langEnSelect').onclick = renderEnglish;
 document.getElementById('langPtSelect').onclick = renderPortugues;
@@ -103,7 +106,7 @@ function renderEnglish(){
 
   wrapperFooter.innerHTML = 
     `<span>You got <span class="pendingNumb"></span> pending tasks</span>` 
-    +`<button>Clear all</button>`;
+    +`<button onclick="clearAllTasks()">Clear all</button>`;
 
   showTasks();
 }
@@ -126,7 +129,7 @@ function renderPortugues(){
 
   wrapperFooter.innerHTML = 
     `<span>Você tem <span class="pendingNumb"></span> tarefas pendentes</span>` 
-    +`<button>Remover tudo</button>`;
+    +`<button onclick="clearAllTasks()">Remover tudo</button>`;
 
   showTasks();
 }

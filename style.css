@@ -23,6 +23,7 @@ nav.nav-top {
 
 #todoLogo {
   cursor: pointer;
+  display: flex;
 }
 
 .langWrapper {

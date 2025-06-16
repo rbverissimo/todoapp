@@ -30,15 +30,38 @@ nav.nav-top {
   cursor: pointer;
 }
 
+
+
 ul.langList {
   list-style-type: none;
+  display: none;
+  position: absolute;
+  top: 5%;
+  text-align: end;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px 1px #333;
+}
+
+ul.langList li {
+  padding: 8px;
+}
+
+ul.langList li > span {
+  border-bottom: 1px solid transparent;
+  transition: 0.3s border ease-in-out;
+}
+
+ul.langList li > span:hover {
+  border-bottom-color: #333;
 }
 
 .main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 93vh;
+  height: 74vh;
 }
 
 .wrapper {
@@ -131,6 +154,7 @@ ul.langList {
 .todoList li:hover span {
   right: 0px;
 }
+
 .wrapper .footer {
   display: flex;
   align-items: center;
@@ -163,6 +187,9 @@ footer.footer-wrapper {
   justify-content: center;
   background-color: #333;
   padding: 2%;
+  height: 7vh;
+  max-height: 70px;
+  align-items: center;
   color: #f4f4f4 !important;
   text-align: center;
   position: fixed;

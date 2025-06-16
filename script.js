@@ -84,13 +84,14 @@ deleteAllbtn.onclick = () => {
 };
 
 document.getElementById('langEnSelect').onclick = renderEnglish;
+document.getElementById('langPtSelect').onclick = renderPortugues;
 
 function renderEnglish(){
   document.getElementById('selectedLang').textContent = 'English';
 
   const langSelector = document.getElementById('langSelector');
-  langSelector.children.item(0).textContent = 'Portuguese';
-  langSelector.children.item(1).textContent = 'English';
+  langSelector.children.item(0).firstChild.textContent = 'Portuguese';
+  langSelector.children.item(1).firstChild.textContent = 'English';
 
   const inputField = document.getElementsByClassName('inputField').item(0).children.item(0);
   inputField.placeholder = 'Add new task';
@@ -103,6 +104,29 @@ function renderEnglish(){
   wrapperFooter.innerHTML = 
     `<span>You got <span class="pendingNumb"></span> pending tasks</span>` 
     +`<button>Clear all</button>`;
+
+  showTasks();
+}
+
+
+function renderPortugues(){
+  document.getElementById('selectedLang').textContent = 'Português';
+
+  const langSelector = document.getElementById('langSelector');
+  langSelector.children.item(0).firstChild.textContent = 'Português';
+  langSelector.children.item(1).firstChild.textContent = 'Inglês';
+
+  const inputField = document.getElementsByClassName('inputField').item(0).children.item(0);
+  inputField.placeholder = 'Adicionar nova tarefa';
+
+  const header = document.getElementsByClassName('wrapper').item(0).children.item(0);
+  header.textContent = 'Tarefas';
+
+  const wrapperFooter = document.querySelector('.footer');
+
+  wrapperFooter.innerHTML = 
+    `<span>Você tem <span class="pendingNumb"></span> tarefas pendentes</span>` 
+    +`<button>Remover tudo</button>`;
 
   showTasks();
 }

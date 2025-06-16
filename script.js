@@ -77,7 +77,7 @@ function selecionarTask(element){
   console.log(element);
 }
 
-deleteAllbtn.onclick = clearTasks;
+deleteAllbtn.onclick = clearAllTasks;
 
 function clearAllTasks(){
   listArr = []; 

@@ -5,12 +5,21 @@ const deleteAllbtn = document.querySelector(".footer button");
 
 document.getElementById('ano-ft').innerText = new Date().getFullYear();
 
+document.getElementById('todoLogo').onclick = () => {
+  window.location.reload();
+}
+
+document.getElementById('langWrapperEl').onclick = () => {
+  const langSelector = document.getElementById('langSelector');
+  langSelector.style.display = 'block';
+}
+
 inputBox.onkeyup = () => {
-  //after releasing the key
-  let userData = inputBox.value; //the inputBox const points to the input area in the DOM;
+
+  let userData = inputBox.value; 
   if (userData.trim() != 0) {
-    addBtn.classList.add("active"); //the classList.add gives the class active to the inputField button;
-  } else addBtn.classList.remove("active"); //and then removes it;
+    addBtn.classList.add("active");
+  } else addBtn.classList.remove("active"); 
 };
 
 showTasks(); //calls the function which will call anything written in the localStorage;
@@ -55,15 +64,15 @@ function showTasks() {
        +'</li>';
   });
   todoList.innerHTML = newLiTag;
-  inputBox.value = ""; //once a task is shown the input box is cleared;
+  inputBox.value = ""; 
 }
 
 //deleting which task individually;
 function deleteTask(index) {
   let getLocalStorage = localStorage.getItem("New Todo");
-  listArr = JSON.parse(getLocalStorage); //transforming to js object
-  listArr.splice(index, 1); //takes the index and how many after the index will be deleted;
-  localStorage.setItem("New Todo", JSON.stringify(listArr)); //back to string
+  listArr = JSON.parse(getLocalStorage); 
+  listArr.splice(index, 1);
+  localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTasks();
 }
 

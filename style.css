@@ -21,6 +21,10 @@ nav.nav-top {
   padding: 1%;
 }
 
+#todoLogo {
+  cursor: pointer;
+}
+
 .langWrapper {
   display: grid;
   grid-auto-flow: column;
@@ -30,18 +34,30 @@ nav.nav-top {
   cursor: pointer;
 }
 
-
-
 ul.langList {
   list-style-type: none;
-  display: none;
+  display: block;
   position: absolute;
   top: 5%;
   text-align: end;
   background-color: white;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 5px 10px 1px #333;
+  box-shadow: 0 5px 10px 1px rgb(51, 51, 51, 0.3);
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transform: translateY(-10px);
+
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.langWrapper:hover ul.langList {
+  max-height: 160px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 ul.langList li {
@@ -49,7 +65,7 @@ ul.langList li {
 }
 
 ul.langList li > span {
-  border-bottom: 1px solid transparent;
+  border-bottom: 2px solid transparent;
   transition: 0.3s border ease-in-out;
 }
 
@@ -81,7 +97,7 @@ ul.langList li > span:hover {
   display: flex;
   height: 45px;
   width: 100%;
-  margin: 20px 0; /* top bottom 20, right left 0 */
+  margin: 20px 0; 
 }
 
 .inputField input {

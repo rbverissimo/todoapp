@@ -28,6 +28,7 @@ nav.nav-top {
 .langWrapper {
   display: grid;
   grid-auto-flow: column;
+  min-width: 115px;
   grid-column: 2;
   gap: 10px;
   align-items: center;

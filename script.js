@@ -22,33 +22,31 @@ inputBox.onkeyup = () => {
   } else addBtn.classList.remove("active"); 
 };
 
-showTasks(); //calls the function which will call anything written in the localStorage;
+showTasks(); 
 
-//if the user click on the add button
 addBtn.onclick = () => {
   let userData = inputBox.value;
   let getLocalStorage = localStorage.getItem("New Todo");
   if (getLocalStorage == null) {
     listArr = [];
   } else {
-    listArr = JSON.parse(getLocalStorage); //transforming in js object
+    listArr = JSON.parse(getLocalStorage); 
   }
   listArr.push(userData);
-  localStorage.setItem("New Todo", JSON.stringify(listArr)); //transform the object back to string
-  showTasks(); //calling
+  localStorage.setItem("New Todo", JSON.stringify(listArr)); 
+  showTasks(); 
   addBtn.classList.remove("active");
 };
 
 function showTasks() {
   let getLocalStorage = localStorage.getItem("New Todo");
   if (getLocalStorage == null) {
-    //the function will be called first and will create the array
     listArr = [];
   } else {
     listArr = JSON.parse(getLocalStorage);
   }
   const pendingNumb = document.querySelector(".pendingNumb");
-  pendingNumb.textContent = listArr.length; //thus, the array at first has 0 length;
+  pendingNumb.textContent = listArr.length;
   if (listArr.length > 0) {
     deleteAllbtn.classList.add("active");
   } else {
@@ -67,7 +65,6 @@ function showTasks() {
   inputBox.value = ""; 
 }
 
-//deleting which task individually;
 function deleteTask(index) {
   let getLocalStorage = localStorage.getItem("New Todo");
   listArr = JSON.parse(getLocalStorage); 
@@ -80,9 +77,8 @@ function selecionarTask(element){
   console.log(element);
 }
 
-//delete all function
 deleteAllbtn.onclick = () => {
-  listArr = []; //empty an array;
+  listArr = []; 
   localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTasks();
 };

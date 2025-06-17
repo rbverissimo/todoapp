@@ -40,6 +40,7 @@ addBtn.onclick = () => {
 
 function showTasks() {
   let getLocalStorage = localStorage.getItem("New Todo");
+  const delBtn = document.querySelector(".footer button");
   if (getLocalStorage == null) {
     listArr = [];
   } else {
@@ -48,9 +49,9 @@ function showTasks() {
   const pendingNumb = document.querySelector(".pendingNumb");
   pendingNumb.textContent = listArr.length;
   if (listArr.length > 0) {
-    deleteAllbtn.classList.add("active");
+    delBtn.classList.add("active");
   } else {
-    deleteAllbtn.classList.remove("active");
+    delBtn.classList.remove("active");
   }
   let newLiTag = "";
   listArr.forEach((element, index) => {
